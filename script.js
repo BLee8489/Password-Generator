@@ -5,15 +5,13 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
-
     passwordText.value = password;
-
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// document.querySelector("#generatepassword").addEventListener("click", generatePassword)
+// document.querySelector("#generate").addEventListener("click", generate)
 
 
 // Create arrays for lowercase uppercase special characters and numeric
@@ -26,32 +24,34 @@ var numerics = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 function generatePassword() {
     var possibles = []
 
-    var length = prompt("How long would you like your password to be?");
-    length = parseInt(length);
+    var length = parseInt(prompt("How long would you like your password to be?"))
+    // length = parseInt(length);
     if (length < 8 || length > 128) {
         alert("Please make the length more than 8 characters and less than 128 characters")
-    }
-    return;
+    } else {
 
-    var confirmLower = confirm("Would you like lowercase letters?");
-    var confirmUpper = confirm("Would you like uppercase letters?");
-    var confirmSymbols = confirm("Would you like any special characters?");
-    var confirmNumbers = confirm("Would you like any numbers?");
 
-    if (confirmLower) possibles.push(lowercase)
-    if (confirmUpper) possibles.push(uppercase)
-    if (confirmSymbols) possibles.push(symbols)
-    if (confirmNumbers) possibles.push(numbers)
-}
+        var confirmLower = confirm("Would you like lowercase letters?");
+        var confirmUpper = confirm("Would you like uppercase letters?");
+        var confirmSymbols = confirm("Would you like any special characters?");
+        var confirmNumbers = confirm("Would you like any numbers?");
 
-var pw = ""
+        if (confirmLower) possibles.push(lowercase)
+        if (confirmUpper) possibles.push(uppercase)
+        if (confirmSymbols) possibles.push(specialcharacters)
+        if (confirmNumbers) possibles.push(numerics)
 
-while (pw.length < length) {
-    for (let i = 0; i < possibles.length; i++) {
-        if (pw.length < length) {
-            let rand = Math.floor(Math.random() * possibles[i].length)
-            pw += possibles[i][rand]
+
+        var password = ""
+
+        while (password.length < length) {
+            for (let i = 0; i < possibles.length; i++) {
+                if (password.length < length) {
+                    let rand = Math.floor(Math.random() * possibles[i].length)
+                    password += possibles[i][rand]
+                }
+            }
+            return possibles
         }
-
-
-        // 
+    }
+}

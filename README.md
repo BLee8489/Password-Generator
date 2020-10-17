@@ -26,6 +26,7 @@ THEN the password is either displayed in an alert or written to the page
 
 Mock-Up
 The following image shows the web application's appearance and functionality:
+
 <img width="949" alt="Screenshot 1" src="https://user-images.githubusercontent.com/71522463/96354299-fdd39d00-1089-11eb-907d-260c533cd17d.png">
 <img width="950" alt="Screenshot 2" src="https://user-images.githubusercontent.com/71522463/96354301-01ffba80-108a-11eb-84dd-4b177bdf5ce0.png">
 <img width="951" alt="Screenshot 3" src="https://user-images.githubusercontent.com/71522463/96354303-0330e780-108a-11eb-9c9d-c553d3105652.png">
